@@ -1,5 +1,5 @@
 {
-  "name": "korwin-briggs-dot-com",
+  "name": "backend",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -20,7 +20,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "571f968f-a2b8-443e-9b43-e8e487f37b4e"
+    "uuid": "2cf0b9a1-3365-4007-b404-27bd702e60bd"
   },
   "engines": {
     "node": ">=12.x.x <=16.x.x",
