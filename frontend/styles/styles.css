@@ -1,0 +1,17 @@
+
+
+#navbar {
+    background-color: aliceblue;
+    height: 100%;
+    width: 100px;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+
+
+#pageContent {
+    
+}

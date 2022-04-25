@@ -4,7 +4,7 @@ import Navbar from './shared/Navbar';
 
 const Layout = ({ children }) => {
     return (
-        <div>
+        <div id="pageContent">
             <Navbar />
             <p>dis main area start</p>
             {children}
