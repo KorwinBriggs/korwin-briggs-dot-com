@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Layout>
       <main>
-        <p>does dis work ?</p>
+        <p>Home page</p>
       </main>
     </Layout>
   )

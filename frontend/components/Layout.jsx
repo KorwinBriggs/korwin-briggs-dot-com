@@ -6,8 +6,9 @@ const Layout = ({ children }) => {
     return (
         <div id="pageContent">
             <Navbar />
-            <p>dis main area start</p>
-            {children}
+            <div id="mainContent">
+                {children}
+            </div>
         </div>
     );
 }
