@@ -1,15 +1,15 @@
 // import Head from 'next/head'
 // import Image from 'next/image'
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout';
 
 // import styles from '../styles/styles.css'
 
 
-export default function Gallery() {
+export default function Pictures() {
   return (
     <Layout>
       <main>
-        <p>Pictures</p>
+        <p>specific gallery item</p>
       </main>
     </Layout>
   )
