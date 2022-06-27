@@ -1,6 +1,6 @@
 //container for whatever sits inside it
 
-import Navbar from './shared/Navbar';
+import Navbar from './Navbar';
 
 const Layout = ({ children }) => {
     return (
