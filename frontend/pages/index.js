@@ -19,7 +19,7 @@ export default function Home(props) {
   )
 }
 
-//getStaticProps is a Nextjs thing; establishes props 
+//getStaticProps is a Nextjs thing; establishes props for the static pages it generates.
 //fetchFromCMS is in lib/service.js, uses axios to load api stuff
 export async function getStaticProps() {
   const illustrations = await fetchFromCMS('api/illustrations?populate=*');
