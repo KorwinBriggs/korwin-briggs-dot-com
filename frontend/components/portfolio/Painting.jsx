@@ -1,11 +1,23 @@
 
+import Link from 'next/Link';
+import Image from 'next/Image';
+
 const Painting = (props) => {
 
     const {backurl, data} = props;
+    const thumbnail = data.thumbnail.data.attributes;
 
     return (
         <div className="painting-container">
-            <img src={backurl + data.thumbnail.data.attributes.url} alt={data.name}/>
+            <Link href={'/gallery/' + data.slug}>
+                <a>
+                    <Image 
+                        src={backurl + thumbnail.url} 
+                        alt={data.name}
+                        width={thumbnail.width}
+                        height={thumbnail.height}/>
+                </a>
+            </Link>
         </div>
     );
 }

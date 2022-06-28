@@ -12,10 +12,9 @@ const Gallery = (props) => {
         <div className="painting-gallery">
             {paintings.map( painting => (
                 <Painting backurl={backurl} data={painting.attributes}/>
-                //<img src={backurl + painting.attributes.thumbnail.data.attributes.url}/>
             ))};
         </div>
     );
 }
 
-export default Gallery;
+export default Gallery; 
