@@ -1,8 +1,11 @@
 
-const Painting = ({props}) => {
+const Painting = (props) => {
+
+    const {backurl, data} = props;
+
     return (
         <div className="painting-container">
-            <img className="painting-img" alt="this alt text will be pulled from strapi"/>
+            <img src={backurl + data.thumbnail.data.attributes.url} alt={data.name}/>
         </div>
     );
 }

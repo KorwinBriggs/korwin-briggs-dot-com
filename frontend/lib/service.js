@@ -1,10 +1,11 @@
 
 import axios from 'axios';
 
-const fetchFromCMS = async (path) => {
-    const url = `http://localhost:1337/${path}`;
+export const backurl = 'http://localhost:1337'
+
+export const fetchFromCMS = async (path) => {
+    const url = backurl + '/' + path;
     const res = await axios.get(url);
     return res.data;
   };
   
-  export default fetchFromCMS;

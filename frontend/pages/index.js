@@ -3,19 +3,17 @@
 // import Image from 'next/image'
 import Layout from '../components/shared/Layout';
 import ArtGallery from '../components/portfolio/ArtGallery';
-import fetchFromCMS from '../lib/service';
+import {fetchFromCMS, backurl} from '../lib/service';
 
 // import styles from '../styles/styles.css'
 
-
 export default function Home(props) {
-  //console.log(illustrations);
-  //console.log(illustrations['data']);
+
   return (
     <Layout>
       <main>
         <p>Home page</p>
-        //<ArtGallery props={props.illustrations}/>
+          <ArtGallery backurl={backurl} paintings={props.illustrations.data} />
       </main>
     </Layout>
   )

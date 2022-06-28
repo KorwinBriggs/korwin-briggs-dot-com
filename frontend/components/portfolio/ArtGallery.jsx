@@ -1,14 +1,19 @@
 
 
-import Painting from './Painting'
+import Painting from './Painting';
 
-const Gallery = (illustrations) => {
 
-    console.log(illustrations);
+const Gallery = (props) => {
+
+    const {backurl, paintings} = props;
+    console.log(paintings);
+
     return (
-        <div className="painting-container">
-            <p>test test</p>
-            <img className="painting-img" alt="this alt text will be pulled from strapi"/>
+        <div className="painting-gallery">
+            {paintings.map( painting => (
+                <Painting backurl={backurl} data={painting.attributes}/>
+                //<img src={backurl + painting.attributes.thumbnail.data.attributes.url}/>
+            ))};
         </div>
     );
 }
