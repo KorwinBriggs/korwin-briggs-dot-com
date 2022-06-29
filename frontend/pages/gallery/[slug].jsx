@@ -8,15 +8,22 @@ import { fetchFromCMS, backurl } from '../../lib/service';
 
 
 export default function Pictures(props) {
-  const illustration = props.illustration.attributes;
+  const data = props.illustration.attributes;
+  const mainImage = data.mainImage.data.attributes;
+
   return (
     <div>
       <Head>
-        <title>Korwin Briggs (.com) - {illustration.title}</title>
+        <title>Korwin Briggs (.com) - {data.title}</title>
       </Head>
       <Layout>
         <main>
-          <p>specific gallery item</p>
+          <p>{data.title}</p>
+          <Image 
+            src={backurl + mainImage.url}
+            width={mainImage.width}
+            height={mainImage.height}
+          />
           <ArtGallery backurl={backurl} paintings={props.illustrations.data} />
         </main>
       </Layout>
