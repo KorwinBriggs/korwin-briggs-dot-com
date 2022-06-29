@@ -6,7 +6,6 @@ import Painting from './Painting';
 const Gallery = (props) => {
 
     const {backurl, paintings} = props;
-    console.log(paintings);
 
     return (
         <div className="painting-gallery">

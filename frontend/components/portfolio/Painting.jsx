@@ -1,5 +1,6 @@
 
 import Link from 'next/Link';
+//note to self: next/Link is for navigation links to dynamic routes -- ie gallery/[slug]
 import Image from 'next/Image';
 
 const Painting = (props) => {
