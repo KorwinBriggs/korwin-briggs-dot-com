@@ -1,5 +1,5 @@
 
-// import Head from 'next/head'
+import Head from 'next/head'
 // import Image from 'next/image'
 import Layout from '../components/shared/Layout';
 import ArtGallery from '../components/portfolio/ArtGallery';
@@ -10,12 +10,17 @@ import {fetchFromCMS, backurl} from '../lib/service';
 export default function Home(props) {
 
   return (
-    <Layout>
-      <main>
-        <p>Home page</p>
-          <ArtGallery backurl={backurl} paintings={props.illustrations.data} />
-      </main>
-    </Layout>
+    <div>
+      <Head>
+        <title>Korwin Briggs</title>
+      </Head>
+      <Layout>
+        <main>
+          <p>Home page</p>
+            <ArtGallery backurl={backurl} paintings={props.illustrations.data} />
+        </main>
+      </Layout>
+    </div>
   )
 }
 

@@ -15,7 +15,8 @@ const Painting = (props) => {
                         src={backurl + thumbnail.url} 
                         alt={data.name}
                         width={thumbnail.width}
-                        height={thumbnail.height}/>
+                        height={thumbnail.height}
+                    />
                 </a>
             </Link>
         </div>

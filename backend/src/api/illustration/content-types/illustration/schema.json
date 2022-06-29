@@ -17,11 +17,6 @@
       "required": true,
       "unique": true
     },
-    "slug": {
-      "type": "string",
-      "unique": true,
-      "required": true
-    },
     "blurb": {
       "type": "text",
       "required": true
@@ -53,6 +48,11 @@
     "post": {
       "type": "richtext",
       "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": false,
+      "targetField": "name"
     }
   }
 }
