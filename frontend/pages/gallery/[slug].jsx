@@ -31,7 +31,6 @@ export default function Pictures(props) {
             />
           </div>
 
-
           {/* the && operator here makes sure additionalimages exists.
           have to do it this way, can't use if statements or whatever. */}
           {additionalImages != null && <div className='additional-images'>
@@ -45,7 +44,7 @@ export default function Pictures(props) {
                 </div>
             ))}
           </div>}
-
+              
           <p className='copy'>{data.post}</p>
 
           <ArtGallery backurl={backurl} paintings={props.illustrations.data} />

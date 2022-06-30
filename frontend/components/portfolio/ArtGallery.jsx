@@ -12,7 +12,7 @@ const Gallery = (props) => {
             {paintings.map( painting => (
                 <Painting backurl={backurl} data={painting.attributes}/>
                 //note to self: have to pass props down like this; can't import directly to component
-            ))};
+            ))}
         </div>
     );
 }
