@@ -31,11 +31,11 @@ export default function Pictures(props) {
             />
           </div>
 
-          <div className='additional-images'>
-            {additionalImages != null && additionalImages.map( (image) => {
-              //this && operator makes sure additionalimages exists.
-              //have to do it this way, can't use if statements or whatever.
-              return (
+
+          {/* the && operator here makes sure additionalimages exists.
+          have to do it this way, can't use if statements or whatever. */}
+          {additionalImages != null && <div className='additional-images'>
+            {additionalImages.map( (image) => (
                 <div className='additional-image'>
                   <Image 
                     src={backurl + image.attributes.url}
@@ -43,9 +43,8 @@ export default function Pictures(props) {
                     height={image.attributes.height}
                   />
                 </div>
-              )
-            })}
-          </div>
+            ))}
+          </div>}
 
           <p className='copy'>{data.post}</p>
 
