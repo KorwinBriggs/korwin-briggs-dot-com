@@ -10,21 +10,47 @@ import { fetchFromCMS, backurl } from '../../lib/service';
 export default function Pictures(props) {
   const data = props.illustration.attributes;
   const mainImage = data.mainImage.data.attributes;
+  const additionalImages = data.additionalImages.data;
 
   return (
     <div>
       <Head>
         <title>Korwin Briggs (.com) - {data.title}</title>
+        <meta name='descryption' content={data.blurb} />
       </Head>
       <Layout>
         <main>
-          <p>{data.title}</p>
-          <Image 
-            src={backurl + mainImage.url}
-            width={mainImage.width}
-            height={mainImage.height}
-          />
+
+          <h1>{data.title}</h1>
+
+          <div className='main-image'>
+            <Image 
+              src={backurl + mainImage.url}
+              width={mainImage.width}
+              height={mainImage.height}
+            />
+          </div>
+
+          <div className='additional-images'>
+            {additionalImages != null && additionalImages.map( (image) => {
+              //this && operator makes sure additionalimages exists.
+              //have to do it this way, can't use if statements or whatever.
+              return (
+                <div className='additional-image'>
+                  <Image 
+                    src={backurl + image.attributes.url}
+                    width={image.attributes.width}
+                    height={image.attributes.height}
+                  />
+                </div>
+              )
+            })}
+          </div>
+
+          <p className='copy'>{data.post}</p>
+
           <ArtGallery backurl={backurl} paintings={props.illustrations.data} />
+
         </main>
       </Layout>
     </div>

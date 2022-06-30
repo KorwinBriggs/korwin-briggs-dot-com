@@ -9,7 +9,7 @@ const Painting = (props) => {
     const thumbnail = data.thumbnail.data.attributes;
 
     return (
-        <div className="painting-container">
+        <div className="painting">
             <Link href={'/gallery/' + data.slug}>
                 <a>
                     <Image 
