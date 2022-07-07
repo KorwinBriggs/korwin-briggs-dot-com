@@ -1,7 +1,9 @@
 
 const Footer = (props) => {
     return (
-        <footer className="footer">This is a footer</footer>
+        <footer id="footer">
+            <div>This is a footer</div>
+        </footer>
     )
 }
 

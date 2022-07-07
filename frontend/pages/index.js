@@ -15,7 +15,7 @@ export default function Home(props) {
         <title>Korwin Briggs</title>
       </Head>
       <Layout>
-        <p>Home page</p>
+          <p>Home page</p>
         <ArtGallery backurl={backurl} paintings={props.illustrations.data} />
       </Layout>
     </div>
