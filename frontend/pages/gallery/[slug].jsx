@@ -19,37 +19,35 @@ export default function Pictures(props) {
         <meta name='descryption' content={data.blurb} />
       </Head>
       <Layout>
-        <main>
 
-          <h1>{data.title}</h1>
+        <h1>{data.title}</h1>
 
-          <div className='main-image'>
-            <Image 
+        <div className='main-image'>
+          <Image 
               src={backurl + mainImage.url}
               width={mainImage.width}
               height={mainImage.height}
-            />
-          </div>
+          />
+        </div>
 
-          {/* the && operator here makes sure additionalimages exists.
-          have to do it this way, can't use if statements or whatever. */}
-          {additionalImages != null && <div className='additional-images'>
-            {additionalImages.map( (image) => (
-                <div className='additional-image'>
-                  <Image 
-                    src={backurl + image.attributes.url}
-                    width={image.attributes.width}
-                    height={image.attributes.height}
-                  />
-                </div>
-            ))}
-          </div>}
+        {/* the && operator here makes sure additionalimages exists.
+        have to do it this way, can't use if statements or whatever. */}
+        {additionalImages != null && <div className='additional-images'>
+          {additionalImages.map( (image) => (
+              <div className='additional-image'>
+                <Image 
+                  src={backurl + image.attributes.url}
+                  width={image.attributes.width}
+                  height={image.attributes.height}
+                />
+              </div>
+          ))}
+        </div>}
               
-          <p className='copy'>{data.post}</p>
+        <p className='copy'>{data.post}</p>
 
-          <ArtGallery backurl={backurl} paintings={props.illustrations.data} />
+        <ArtGallery backurl={backurl} paintings={props.illustrations.data} />
 
-        </main>
       </Layout>
     </div>
   )
