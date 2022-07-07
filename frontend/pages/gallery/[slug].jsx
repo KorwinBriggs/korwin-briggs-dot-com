@@ -16,7 +16,7 @@ export default function Pictures(props) {
     <div>
       <Head>
         <title>Korwin Briggs (.com) - {data.title}</title>
-        <meta name='descryption' content={data.blurb} />
+        <meta name='description' content={data.blurb} />
       </Head>
       <Layout>
 
