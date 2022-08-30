@@ -12,11 +12,11 @@
     "axios": "^0.27.2",
     "next": "12.1.5",
     "react": "18.0.0",
-    "react-dom": "18.0.0",
-    "react-masonry-component": "^6.3.0"
+    "react-dom": "18.0.0"
   },
   "devDependencies": {
     "eslint": "8.14.0",
-    "eslint-config-next": "12.1.5"
+    "eslint-config-next": "12.1.5",
+    "react-xmasonry": "^3.0.6"
   }
 }
