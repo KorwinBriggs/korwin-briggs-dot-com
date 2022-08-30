@@ -53,6 +53,12 @@
       "type": "uid",
       "required": false,
       "targetField": "title"
+    },
+    "order": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true,
+      "default": "0"
     }
   }
 }
