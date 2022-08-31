@@ -13,7 +13,7 @@ const Gallery = (props) => {
 
     return (
         <div className='painting-gallery'>
-            <MagicGrid items={paintings.length} gutter={0} animate={true}>
+            <MagicGrid items={paintings.length} gutter={0} useMin={true} animate={true}>
                 {paintings.map( painting => (
                         <Painting backurl={backurl} data={painting.attributes}/>
                 ))}
