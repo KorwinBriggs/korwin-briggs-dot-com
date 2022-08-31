@@ -1,6 +1,6 @@
 
 import Painting from './Painting';
-import { XMasonry, XBlock } from "react-xmasonry";
+import MagicGrid from 'react-magic-grid';
 
 const Gallery = (props) => {
 
@@ -12,13 +12,13 @@ const Gallery = (props) => {
     paintings.sort((a, b) => a.attributes.order - b.attributes.order) 
 
     return (
-            <XMasonry>
+        <div className='painting-gallery'>
+            <MagicGrid items={paintings.length} gutter={0} animate={true}>
                 {paintings.map( painting => (
-                    <XBlock>
                         <Painting backurl={backurl} data={painting.attributes}/>
-                    </XBlock>
                 ))}
-            </XMasonry>
+            </MagicGrid>
+        </div>
 
     );
     //if replacement works, npm uninstall react-masonry-css

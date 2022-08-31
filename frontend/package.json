@@ -10,13 +10,14 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "magic-grid": "^3.2.4",
     "next": "12.1.5",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-dom": "18.0.0",
+    "react-magic-grid": "^1.2.1"
   },
   "devDependencies": {
     "eslint": "8.14.0",
-    "eslint-config-next": "12.1.5",
-    "react-xmasonry": "^3.0.6"
+    "eslint-config-next": "12.1.5"
   }
 }

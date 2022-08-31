@@ -37,12 +37,18 @@
 
 /* masonry grid things */
 
-/* .painting-gallery {
+.painting-gallery {
     width: 100%;
-    height:300px;
+    max-width: 1400px;
 }
 
 .painting {
     position: absolute;
-    width: 30%;
-} */
+    width: 33%;
+}
+
+@media screen and (max-width: 900px) {
+    .painting {
+        width: 50%;
+    }
+}
