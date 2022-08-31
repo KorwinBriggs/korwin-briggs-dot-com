@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogposts",
+  "info": {
+    "singularName": "blogpost",
+    "pluralName": "blogposts",
+    "displayName": "Blog Posts"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Body": {
+      "type": "richtext"
+    }
+  }
+}

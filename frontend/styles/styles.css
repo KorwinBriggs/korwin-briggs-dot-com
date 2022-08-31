@@ -51,7 +51,7 @@
     position: absolute;
     width:100%;
     min-width: 200px;
-    max-width: 350px;
+    max-width: 400px;
     filter:brightness(100%);
     transition:.2s !important; 
     /* using !important here to override the in-line
