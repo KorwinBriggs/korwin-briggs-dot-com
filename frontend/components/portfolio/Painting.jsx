@@ -10,7 +10,7 @@ const Painting = (props) => {
 
     return (
         <div className="painting">
-            <Link href={'/gallery/' + data.slug}>
+            <Link href={'/illustrations/' + data.slug}>
                 <a>
                     <Image 
                         src={backurl + thumbnail.url} 
