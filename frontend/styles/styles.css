@@ -81,9 +81,6 @@ hr {
     border-top: 1px solid var(--shadow);
 }
 
-section {
-    padding:0 10%;
-}
 
 /* NAVBAR */
 
@@ -136,6 +133,7 @@ section {
 
 
 /* INTRODUCTION */
+/* ie the big text at the top of some pages */
 
 .introduction {
 
@@ -150,8 +148,7 @@ section {
 
 
 /* ART GALLERY */
-
-/* masonry grid things */
+/* painting masonry grid things things */
 
 .painting-gallery {
     width: 100%;
@@ -174,8 +171,24 @@ section {
     filter:brightness(115%);
 }
 
-/* @media screen and (max-width: 900px) {
-    .painting {
-        width: 50%;
-    }
-} */
+
+
+/* INDIVIDUAL GALLERY OR BLOG PAGE */
+
+article, section, figure {
+    margin:auto;
+}
+
+article {
+    padding:0 10%;
+}
+
+.post-title {
+    text-align: center;
+}
+
+.main-image {
+    text-align: center;
+    /* because of the weird way nextjs img works (that is, sticking it inside of a span)
+       i have to use the enclosing div (or <figure>) to center it */
+}

@@ -20,31 +20,37 @@ export default function Pictures(props) {
       </Head>
       <Layout>
 
-        <h1>{data.title}</h1>
+        <article>
 
-        <div className='main-image'>
-          <Image 
-              src={backurl + mainImage.url}
-              width={mainImage.width}
-              height={mainImage.height}
-          />
-        </div>
+          <h1 className='post-title'>{data.title}</h1>
 
-        {/* the && operator here makes sure additionalimages exists.
-        have to do it this way, can't use if statements or whatever. */}
-        {additionalImages != null && <div className='additional-images'>
-          {additionalImages.map( (image) => (
-              <div className='additional-image'>
-                <Image 
-                  src={backurl + image.attributes.url}
-                  width={image.attributes.width}
-                  height={image.attributes.height}
-                />
-              </div>
-          ))}
-        </div>}
-              
-        <p className='copy'>{data.post}</p>
+          <figure className='main-image'>
+            <Image 
+                src={backurl + mainImage.url}
+                width={mainImage.width}
+                height={mainImage.height}
+            />
+          </figure>
+
+          {/* the && operator here makes sure additionalimages exists.
+          have to do it this way, can't use if statements or whatever. */}
+          {additionalImages != null && <section className='additional-images'>
+            {additionalImages.map( (image) => (
+                <figure className='additional-image'>
+                  <Image 
+                    src={backurl + image.attributes.url}
+                    width={image.attributes.width}
+                    height={image.attributes.height}
+                  />
+                </figure>
+            ))}
+          </section>}
+                
+          <p className='copy'>{data.post}</p>
+
+        </article>
+
+        <hr />
 
         <ArtGallery backurl={backurl} paintings={props.illustrations.data} />
 
