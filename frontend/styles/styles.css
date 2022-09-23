@@ -1,32 +1,113 @@
 /* NOTE TO SELF! these are imported in /pages/_app.js */
 
 
+/* VARIABLES and FONTFACES */
+
+@font-face {
+    font-family: 'Signika';
+    src:    url('../public/fonts/Signika-VariableFont_wght.woff2') format('woff2'),
+            url('../public/fonts/Signika-VariableFont_wght.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Stint Ultra Condensed';
+    src:    url('../public/fonts/StintUltraCondensed-Regular.woff2') format('woff2'),
+            url('../public/fonts/StintUltraCondensed-Regular.woff') format('woff');
+}
+
+:root{
+    --white: #ffffff;
+    --offwhite: #fffcee;
+    --offwhiteblue: #f7fdff;
+
+    --black: #1e1923;
+    --gray: #68616f;
+
+    --shadow: #b5a5bd;
+
+    --purple: #834b9b;
+    --lightpurple: #bf70cb;
+    --darkpurple: #643e85;
+    --green: #5ab895;
+
+    font-size: 16px;
+}
+
 /* SHARED */
 
-#page-Content {
+body {
+    font-family: 'Signika', 'Gill Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--black);
+}
+
+h1 {
+    font-family: 'Stint Ultra Condensed';
+}
+
+p {
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    transition: .1s;
+    color: var(--purple);
+}
+
+a:visited {
+    color: var(--darkpurple);
+}
+
+a:hover {
+    color: var(--lightpurple);
 }
 
 
-#navbar {
-    background-color: aliceblue;
+hr {
+    height:1px;
+    width:50%;
+    border:none;
+    border-top: 1px solid var(--shadow);
+}
+
+section {
+    padding:0 10%;
+}
+
+/* NAVBAR */
+
+#header {
+    background-color: var(--white);
     height: 100%;
-    width: 100px;
+    width: 150px;
     position: fixed;
     z-index: 1;
     overflow-x: hidden;
     top:0;
-    transition: 2s;
+    transition: .2s;
+    border-right: 1px dotted var(--shadow);
+    box-shadow:0 0 12px -3px var(--shadow);
+
+    padding:1.25rem;
 }
 
-#navbar:hover {
-    background-color: blue;
+#navlogo {
+    font-size: 1.5rem;
+    width:100px;
+    margin:0;
+}
+
+#header:hover {
+    /* background-color: var(--offwhiteblue); */
 }
 
 
 #main-content {
     padding-top:1rem;
-    padding-left:130px;
-    padding-right:30px;
+    padding-left:200px;
+    padding-right:10px;
     /* background-color:cadetblue; */
     background-image: url('/images/shared/whitewall.png');
 }
@@ -34,6 +115,20 @@
 
 #footer {
     background-color: blueviolet;
+}
+
+
+
+/* INTRODUCTION */
+
+.introduction {
+
+}
+
+.intro-text {
+    font-size: 1.25rem;
+    line-height:1.75;
+    letter-spacing: .05rem;
 }
 
 
@@ -51,7 +146,7 @@
     position: absolute;
     width:100%;
     min-width: 200px;
-    max-width: 400px;
+    max-width: 350px;
     filter:brightness(100%);
     transition:.2s !important; 
     /* using !important here to override the in-line

@@ -1,21 +1,26 @@
 
 const Navbar = () => {
     return (
-        <header id="navbar" class="navOpen">
+        <header id="header" class="navOpen">
             
-            <p>dis navigation buttons beep boop</p>
-            <nav>
+            <nav id="navbar">
+                <h2 id="navlogo">Korwin Briggs (.com)</h2>
                 <ul>
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <li><a href="/">Illustrations</a></li>
-                    <li><a href="/blog">Doodles and Poems</a></li>
                     <li><a href="/books">Books</a></li>
-                    <li><a href="#">Codings</a></li>
+                    <li><a href="/blog">Doodleblog</a></li>
+                    {/* <li><a href="#">Codings</a></li> */}
                 </ul>
             </nav>
 
-            <div>
-                <p>this will be a mailing list sign-up</p>
+            <div id="navbarMailingList">
+                <p>Mailing List</p>
+                <p>(I mostly send silly poems)</p>
+            </div>
+
+            <div id="navbarLatestBlog">
+                <p>Latest doodle, poem, and/or blogpost</p>
             </div>
             
         </header>

@@ -15,7 +15,15 @@ export default function Home(props) {
         <title>Korwin Briggs</title>
       </Head>
       <Layout>
-          <p>Home page</p>
+        <section className='introduction'>
+          <p className='intro-text'>
+            Korwin Briggs draws and writes, mostly about mythology, history, and science. 
+            He also has a successful webcomic about the same...though it's been a while since the last update.
+            Feel free to look at his illustrations, books, or weird interactive coding projects, or join the mailing list for
+            a newsletter that, if we're being honest, is like 95% doodles with silly rhyming poems.
+          </p>
+        </section>
+        <hr />
         <ArtGallery backurl={backurl} paintings={props.illustrations.data} />
       </Layout>
     </div>
