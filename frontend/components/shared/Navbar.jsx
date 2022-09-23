@@ -15,12 +15,12 @@ const Navbar = () => {
             </nav>
 
             <div id="navbarMailingList">
-                <p>Mailing List</p>
+                <h4>Mailing List</h4>
                 <p>(I mostly send silly poems)</p>
             </div>
 
             <div id="navbarLatestBlog">
-                <p>Latest doodle, poem, and/or blogpost</p>
+                <h4>Latest doodle, poem, and/or blogpost</h4>
             </div>
             
         </header>

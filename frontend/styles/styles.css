@@ -10,9 +10,9 @@
 }
 
 @font-face {
-    font-family: 'Stint Ultra Condensed';
-    src:    url('../public/fonts/StintUltraCondensed-Regular.woff2') format('woff2'),
-            url('../public/fonts/StintUltraCondensed-Regular.woff') format('woff');
+    font-family: 'Fraunces';
+    src:    url('../public/fonts/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.woff2') format('woff2'),
+            url('../public/fonts/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.woff') format('woff');
 }
 
 :root{
@@ -42,8 +42,8 @@ body {
     color: var(--black);
 }
 
-h1 {
-    font-family: 'Stint Ultra Condensed';
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces';
 }
 
 p {
@@ -64,6 +64,15 @@ a:hover {
     color: var(--lightpurple);
 }
 
+ul, li {
+    padding:0;
+}
+
+li::marker {
+    color: var(--shadow);
+    content: '';
+}
+
 
 hr {
     height:1px;
@@ -81,7 +90,7 @@ section {
 #header {
     background-color: var(--white);
     height: 100%;
-    width: 150px;
+    width: 110px;
     position: fixed;
     z-index: 1;
     overflow-x: hidden;
@@ -90,23 +99,30 @@ section {
     border-right: 1px dotted var(--shadow);
     box-shadow:0 0 12px -3px var(--shadow);
 
-    padding:1.25rem;
+    padding:20px;
+    text-align: center;
 }
 
 #navlogo {
     font-size: 1.5rem;
-    width:100px;
+    color: var(--black);
+    width:100%;
     margin:0;
+    /* text-align: center; */
+    transition: .2s;
+}
+
+#navlogo:hover {
+    color: var(--gray);
 }
 
 #header:hover {
     /* background-color: var(--offwhiteblue); */
 }
 
-
 #main-content {
     padding-top:1rem;
-    padding-left:200px;
+    padding-left:160px;
     padding-right:10px;
     /* background-color:cadetblue; */
     background-image: url('/images/shared/whitewall.png');
@@ -140,6 +156,7 @@ section {
 .painting-gallery {
     width: 100%;
     max-width: 1400px;
+    margin:auto;
 }
 
 .painting {
