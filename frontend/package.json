@@ -10,11 +10,10 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "magic-grid": "^3.2.4",
     "next": "^12.3.1",
     "react": "18.0.0",
     "react-dom": "18.0.0",
-    "react-magic-grid": "^1.2.1"
+    "react-masonry-css": "^1.0.16"
   },
   "devDependencies": {
     "eslint": "8.14.0",

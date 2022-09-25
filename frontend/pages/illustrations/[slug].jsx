@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from 'next/future/Image'
 import Layout from '../../components/shared/Layout';
 import ArtGallery from '../../components/portfolio/ArtGallery';
 import { fetchFromCMS, backurl } from '../../lib/service';
@@ -20,7 +20,14 @@ export default function Pictures(props) {
       </Head>
       <Layout>
 
-        <article className='illustration-page'>
+        <article className='illustration-page' >
+
+          {/* <Image 
+            className='illustration-bg'
+            src={backurl + mainImage.url}
+            sizes="100vw"
+            width={mainImage.width}
+            height={mainImage.height}/> */}
 
           <section className='illustration-main'>
 
@@ -31,26 +38,25 @@ export default function Pictures(props) {
 
             <figure className='illustration-images'>
               
-              <div className='illustration-image'>
-                <Image 
-                  src={backurl + mainImage.url}
-                  width={mainImage.width}
-                  height={mainImage.height}
-                />
-              </div>
+               <Image 
+                className='illustration-image'
+                src={backurl + mainImage.url}
+                sizes="100vw"
+                width={mainImage.width}
+                height={mainImage.height}
+              />
 
               {/* the && operator here makes sure additionalimages exists.
                   otherwise the page will fail in cases where they don't.
                   have to do it this way, can't use if statements or whatever. */}
               {additionalImages != null && <div className='illustration-additional-images'>
                 {additionalImages.map( (image) => (
-                    <div className='illustration-image'>
-                      <Image 
-                        src={backurl + image.attributes.url}
-                        width={image.attributes.width}
-                        height={image.attributes.height}
-                      />
-                    </div>
+                  <Image 
+                    className='illustration-image'
+                    src={backurl + image.attributes.url}
+                    width={image.attributes.width}
+                    height={image.attributes.height}
+                  />
                 ))}
               </div>}
 
@@ -63,6 +69,8 @@ export default function Pictures(props) {
         </article>
 
         <hr />
+
+        <h2>But Wait, There's More!</h2>
 
         <ArtGallery backurl={backurl} paintings={props.illustrations.data} />
 

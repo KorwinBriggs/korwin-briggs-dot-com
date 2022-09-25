@@ -44,6 +44,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Fraunces';
+    text-align: center;
 }
 
 p {
@@ -86,6 +87,16 @@ div, article, section, figure {
     margin:0;
 }
 
+article {
+    padding-top: 3rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 
 /* NAVBAR */
 
@@ -97,7 +108,7 @@ div, article, section, figure {
     z-index: 1;
     overflow-x: hidden;
     top:0;
-    transition: .2s;
+    /* transition: .2s; */
 
     border-right: 1px dotted var(--shadow);
     box-shadow:0 0 12px -3px var(--shadow);
@@ -108,7 +119,7 @@ div, article, section, figure {
 }
 
 #navlogo {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: var(--black);
     width:100%;
     margin:0;
@@ -124,9 +135,9 @@ div, article, section, figure {
 }
 
 #main-content {
-    padding-top:3rem;
-    padding-left:160px;
-    padding-right:10px;
+    padding-top:0;
+    padding-left:150px;
+    padding-right:0px;
     
     background-image: url('/images/shared/whitewall.png');
     box-shadow:0 0 12px -3px var(--shadow);
@@ -166,21 +177,24 @@ div, article, section, figure {
 /* painting masonry grid things things */
 
 .painting-gallery {
-    width: 100%;
+    display: flex;
+    width: auto;
     max-width: 1400px;
     margin:auto;
-    clear: both;
+    /* clear: both; */
+}
+
+.painting-gallery-column {
+    padding-left:0;
+    background-clip: padding-box;
 }
 
 .painting {
-    position: absolute;
     width:100%;
-    min-width: 200px;
-    max-width: 350px;
+    /* min-width: 200px;
+    max-width: 350px; */
     filter:brightness(100%);
-    transition:.2s !important; 
-    /* using !important here to override the in-line
-    css that magic-grid attaches to each painting */
+    transition:.2s
 }
 
 .painting:hover {
@@ -198,6 +212,17 @@ div, article, section, figure {
     overflow: visible;
 }
 
+/* .illustration-bg {
+    opacity: 40%;
+    mix-blend-mode: multiply;
+    filter: blur(8px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+} */
+
 .illustration-description {
     width:25%;
     position:sticky;
@@ -211,6 +236,7 @@ div, article, section, figure {
 
 .illustration-images {
     width:65%;
+    min-width: 400px;
     position:sticky;
     align-self: flex-start;
     top:0;
@@ -225,18 +251,63 @@ div, article, section, figure {
     margin-bottom:1.5rem;
 }
 
-.illustration-image > * {
-    /* this fixes a weird property of nextJS images where the nested <span>'s 
-       make a little space appear beneath the images */
-    vertical-align: top;
-}
-
 
 
 
 
 /* MEDIA QUERIES */
 
-@media {
+@media screen and (max-width: 1000px) {
+
+    .illustration-main {
+        display: block;
+        overflow: visible;
+        padding:0 5%;
+    }
+
+    .illustration-description {
+        width:100%;
+        position:static;
+        align-self: flex-start;
+        top:0;
+    }
     
+    .post-title {
+        text-align: center;
+    }
+    
+    .illustration-images {
+        width:100%;
+        min-width: 0;
+        position:static;
+        align-self: flex-start;
+        top:0;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    
+    #header {
+        height: 40px;
+        width: 100%;
+        position: fixed;
+        top:0;
+    
+        border-bottom: 1px dotted var(--shadow);
+        border-right: none;
+        box-shadow:0 0 12px -3px var(--shadow);
+    
+        padding:20px;
+        padding-top:1.5rem;
+        text-align: center;
+        /* transition:0s; */
+    }
+
+    #main-content {
+        padding-top:3rem;
+        padding-left:10px;
+        padding-right:10px;
+    }
+
 }
