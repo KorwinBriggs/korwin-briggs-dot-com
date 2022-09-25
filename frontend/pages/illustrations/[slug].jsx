@@ -20,33 +20,45 @@ export default function Pictures(props) {
       </Head>
       <Layout>
 
-        <article>
+        <article className='illustration-page'>
 
-          <h1 className='post-title'>{data.title}</h1>
+          <section className='illustration-main'>
 
-          <figure className='main-image'>
-            <Image 
-                src={backurl + mainImage.url}
-                width={mainImage.width}
-                height={mainImage.height}
-            />
-          </figure>
+            <div className='illustration-description'>
+              <h1 className='post-title illustration-title'>{data.title}</h1>
+              <p className='post-copy illustration-copy'>{data.post}</p>
+            </div>
 
-          {/* the && operator here makes sure additionalimages exists.
-          have to do it this way, can't use if statements or whatever. */}
-          {additionalImages != null && <section className='additional-images'>
-            {additionalImages.map( (image) => (
-                <figure className='additional-image'>
-                  <Image 
-                    src={backurl + image.attributes.url}
-                    width={image.attributes.width}
-                    height={image.attributes.height}
-                  />
-                </figure>
-            ))}
-          </section>}
-                
-          <p className='copy'>{data.post}</p>
+            <figure className='illustration-images'>
+              
+              <div className='illustration-image'>
+                <Image 
+                  src={backurl + mainImage.url}
+                  width={mainImage.width}
+                  height={mainImage.height}
+                />
+              </div>
+
+              {/* the && operator here makes sure additionalimages exists.
+                  otherwise the page will fail in cases where they don't.
+                  have to do it this way, can't use if statements or whatever. */}
+              {additionalImages != null && <div className='illustration-additional-images'>
+                {additionalImages.map( (image) => (
+                    <div className='illustration-image'>
+                      <Image 
+                        src={backurl + image.attributes.url}
+                        width={image.attributes.width}
+                        height={image.attributes.height}
+                      />
+                    </div>
+                ))}
+              </div>}
+
+            </figure>
+
+            
+
+          </section>
 
         </article>
 

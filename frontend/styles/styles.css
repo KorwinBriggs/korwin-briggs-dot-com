@@ -79,6 +79,11 @@ hr {
     width:50%;
     border:none;
     border-top: 1px solid var(--shadow);
+    clear:both;
+}
+
+div, article, section, figure {
+    margin:0;
 }
 
 
@@ -93,10 +98,12 @@ hr {
     overflow-x: hidden;
     top:0;
     transition: .2s;
+
     border-right: 1px dotted var(--shadow);
     box-shadow:0 0 12px -3px var(--shadow);
 
     padding:20px;
+    padding-top:1.5rem;
     text-align: center;
 }
 
@@ -105,7 +112,6 @@ hr {
     color: var(--black);
     width:100%;
     margin:0;
-    /* text-align: center; */
     transition: .2s;
 }
 
@@ -118,18 +124,27 @@ hr {
 }
 
 #main-content {
-    padding-top:1rem;
+    padding-top:3rem;
     padding-left:160px;
     padding-right:10px;
-    /* background-color:cadetblue; */
+    
     background-image: url('/images/shared/whitewall.png');
+    box-shadow:0 0 12px -3px var(--shadow);
 }
 
+
+
+/* FOOTER */
 
 #footer {
-    background-color: blueviolet;
+    background-color: var(--white);
+    border-top: 1px dotted var(--shadow);
 }
 
+
+/*---------------------------------*/
+/* INDIVIDUAL PAGES AND COMPONENTS */
+/*---------------------------------*/
 
 
 /* INTRODUCTION */
@@ -154,6 +169,7 @@ hr {
     width: 100%;
     max-width: 1400px;
     margin:auto;
+    clear: both;
 }
 
 .painting {
@@ -175,20 +191,52 @@ hr {
 
 /* INDIVIDUAL GALLERY OR BLOG PAGE */
 
-article, section, figure {
-    margin:auto;
+
+.illustration-main {
+    display: flex;
+    justify-content: space-evenly;
+    overflow: visible;
 }
 
-article {
-    padding:0 10%;
+.illustration-description {
+    width:25%;
+    position:sticky;
+    align-self: flex-start;
+    top:0;
 }
 
 .post-title {
     text-align: center;
 }
 
-.main-image {
+.illustration-images {
+    width:65%;
+    position:sticky;
+    align-self: flex-start;
+    top:0;
+
     text-align: center;
     /* because of the weird way nextjs img works (that is, sticking it inside of a span)
        i have to use the enclosing div (or <figure>) to center it */
+}
+
+.illustration-image {
+    box-shadow:0 2px 9px -3px var(--shadow);
+    margin-bottom:1.5rem;
+}
+
+.illustration-image > * {
+    /* this fixes a weird property of nextJS images where the nested <span>'s 
+       make a little space appear beneath the images */
+    vertical-align: top;
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+
+@media {
+    
 }
