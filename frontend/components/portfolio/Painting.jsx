@@ -9,7 +9,7 @@ const Painting = (props) => {
     const thumbnail = data.thumbnail.data.attributes;
 
     return (
-        <div >
+        <figure>
             <Link href={'/illustrations/' + data.slug}>
                 <a>
                     <Image className="painting"
@@ -24,7 +24,7 @@ const Painting = (props) => {
                     />
                 </a>
             </Link>
-        </div>
+        </figure>
     );
 }
 

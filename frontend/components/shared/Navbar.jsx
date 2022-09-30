@@ -10,6 +10,7 @@ const Navbar = () => {
                     <li><a href="/">Illustrations</a></li>
                     <li><a href="/books">Books</a></li>
                     <li><a href="/blog">Doodleblog</a></li>
+                    <li><a href="/about">Korwin Who?</a></li>
                     {/* <li><a href="#">Codings</a></li> */}
                 </ul>
             </nav>

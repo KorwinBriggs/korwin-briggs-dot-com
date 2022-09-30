@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "books",
+  "info": {
+    "singularName": "book",
+    "pluralName": "books",
+    "displayName": "Books",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "order": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "default": 0
+    },
+    "written": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "illustrated": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "mydescription": {
+      "type": "richtext",
+      "required": true
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "interiors": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "bgcolor": {
+      "type": "customField",
+      "required": false,
+      "customField": "plugin::color-picker.color"
+    },
+    "txtcolor": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color"
+    },
+    "publisherdescription": {
+      "type": "richtext"
+    }
+  }
+}

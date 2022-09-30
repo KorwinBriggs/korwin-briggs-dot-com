@@ -3,6 +3,7 @@ import Image from 'next/future/Image'
 import Layout from '../../components/shared/Layout';
 import ArtGallery from '../../components/portfolio/ArtGallery';
 import { fetchFromCMS, backurl } from '../../lib/service';
+import Markdown from 'markdown-to-jsx';
 
 // import styles from '../styles/styles.css'
 
@@ -33,7 +34,7 @@ export default function Pictures(props) {
 
             <div className='illustration-description'>
               <h1 className='post-title illustration-title'>{data.title}</h1>
-              <p className='post-copy illustration-copy'>{data.post}</p>
+              <Markdown className='post-copy illustration-copy'>{data.post}</Markdown>
             </div>
 
             <figure className='illustration-images'>
