@@ -5,12 +5,12 @@ const Navbar = () => {
             
             <nav id="navbar">
                 <h2 id="navlogo">Korwin Briggs (.com)</h2>
-                <ul>
+                <ul id="navbuttons">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <li><a href="/">Illustrations</a></li>
-                    <li><a href="/books">Books</a></li>
-                    <li><a href="/blog">Doodleblog</a></li>
-                    <li><a href="/about">Korwin Who?</a></li>
+                    <li className="navbutton"><a href="/">Illustrations</a></li>
+                    <li className="navbutton"><a href="/books">Books</a></li>
+                    <li className="navbutton"><a href="/blog">Doodleblog</a></li>
+                    <li className="navbutton"><a href="/about">Korwin Who?</a></li>
                     {/* <li><a href="#">Codings</a></li> */}
                 </ul>
             </nav>
