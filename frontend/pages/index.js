@@ -17,10 +17,17 @@ export default function Home(props) {
       <Layout>
         <section className='introduction'>
           <p className='intro-text'>
-            Korwin Briggs draws and writes, mostly about mythology, history, and science. 
-            He also has a successful webcomic about the same...though it's been a while since the last update.
-            Feel free to look at his illustrations, books, or weird interactive coding projects, or join the mailing list for
-            a newsletter that, if we're being honest, is like 95% doodles with silly rhyming poems.
+            
+          {/* Korwin Briggs has written and illustrated books, comics, and infographics 
+          about science, history, mythology, and other academic-sounding things. 
+          This is his fancy portfolio site and (eventually, maybe) blog - 
+          see more of his work at <a href="https://www.veritablehokum.com">VeritableHokum.com</a>, 
+          or join his mailing list, which he promises is like 95% doodles and silly rhyming poems. */}
+
+          Korwin Briggs has written and illustrated books, comics, and infographics 
+          about science, history, mythology, and other academic-sounding things. 
+          This is his fancy portfolio site - 
+          see more of his work at <a href="https://www.veritablehokum.com">VeritableHokum.com</a>.
           </p>
         </section>
         <hr />

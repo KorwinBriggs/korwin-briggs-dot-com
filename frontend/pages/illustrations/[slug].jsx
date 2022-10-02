@@ -21,26 +21,17 @@ export default function Pictures(props) {
       </Head>
       <Layout>
 
-        <article className='illustration-page' >
+          <article className='two-column-holder'>
 
-          {/* <Image 
-            className='illustration-bg'
-            src={backurl + mainImage.url}
-            sizes="100vw"
-            width={mainImage.width}
-            height={mainImage.height}/> */}
-
-          <section className='illustration-main'>
-
-            <div className='illustration-description'>
+            <div className='column-left'>
               <h1 className='post-title illustration-title'>{data.title}</h1>
               <Markdown className='post-copy illustration-copy'>{data.post}</Markdown>
             </div>
 
-            <figure className='illustration-images'>
+            <figure className='column-right'>
               
                <Image 
-                className='illustration-image'
+                className='image-standard'
                 src={backurl + mainImage.url}
                 sizes="100vw"
                 width={mainImage.width}
@@ -53,7 +44,7 @@ export default function Pictures(props) {
               {additionalImages != null && <div className='illustration-additional-images'>
                 {additionalImages.map( (image) => (
                   <Image 
-                    className='illustration-image'
+                    className='image-standard'
                     src={backurl + image.attributes.url}
                     width={image.attributes.width}
                     height={image.attributes.height}
@@ -62,10 +53,6 @@ export default function Pictures(props) {
               </div>}
 
             </figure>
-
-            
-
-          </section>
 
         </article>
 

@@ -9,18 +9,8 @@ import {fetchFromCMS, backurl} from '../lib/service';
 
 export default function Books(props) {
 
-  const data = props.books.data;
-
-  let writtenAndIllustrated = []
-  let onlyIllustrated = []
-
-  data.forEach(book => {
-    if (book.attributes.written) writtenAndIllustrated.push(book);
-    else onlyIllustrated.push(book);
-  });
-
-  writtenAndIllustrated.sort((a, b) => a.attributes.order - b.attributes.order)
-  onlyIllustrated.sort((a, b) => a.attributes.order - b.attributes.order)
+  let books = props.books.data;
+  books.sort((a, b) => a.attributes.order - b.attributes.order);
 
   return (
     <div>
@@ -29,28 +19,21 @@ export default function Books(props) {
       </Head>
       <Layout>
 
-        
-          <h1>Books I've Written (and illustrated)</h1>
+        <div>
+
 
           {/* the && operator here makes sure additionalimages exists.
           otherwise the page will fail in cases where they don't.
           have to do it this way, can't use if statements or whatever. */}
-          {writtenAndIllustrated[0] != null && <section className='written-and-illustrated'>
-        
-            {writtenAndIllustrated.map( book => (
+          {books != null && <div>
+
+            {books.map( book => (
               <Book backurl={backurl} data={book.attributes} />
             ))}
 
-          </section>}
+          </div>}
 
-          {onlyIllustrated[0] != null && <section className='only-illustrated'>
-            <h1>Books I've Illustrated (but not written)</h1>
-
-            {onlyIllustrated.map( book => (
-              <Book backurl={backurl} data={book.attributes} />
-            ))}
-
-          </section>}
+        </div>
           
       </Layout>
     </div>

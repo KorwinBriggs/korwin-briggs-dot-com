@@ -193,6 +193,7 @@ img {
     width:100%;
     /* min-width: 200px;
     max-width: 350px; */
+    margin:auto;
     filter:brightness(100%);
     transition:.2s
 }
@@ -206,50 +207,43 @@ img {
 /* INDIVIDUAL GALLERY OR BLOG PAGE */
 
 
-.illustration-main {
+.post-title {
+    text-align: center;
+}
+
+.two-column-holder {
     display: flex;
     justify-content: space-evenly;
     overflow: visible;
 }
 
-/* .illustration-bg {
-    opacity: 40%;
-    mix-blend-mode: multiply;
-    filter: blur(8px);
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-} */
-
-.illustration-description {
+.column-left {
     width:25%;
     position:sticky;
     align-self: flex-start;
     top:0;
+    padding-bottom:1.5rem;
 }
 
-.post-title {
-    text-align: center;
-}
-
-.illustration-images {
+.column-right {
     width:65%;
     min-width: 400px;
     position:sticky;
     align-self: flex-start;
     top:0;
-
-    text-align: center;
-    /* because of the weird way nextjs img works (that is, sticking it inside of a span)
-       i have to use the enclosing div (or <figure>) to center it */
 }
 
-.illustration-image {
+.image-standard {
     box-shadow:0 2px 9px -3px var(--shadow);
     margin-bottom:1.5rem;
 }
+
+
+
+/* BOOKS PAGE */
+
+
+/* BOOK (individual) */
 
 
 
@@ -257,36 +251,35 @@ img {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 768px) {
 
-    .illustration-main {
+    .two-column-holder {
         display: block;
         overflow: visible;
         padding:0 5%;
     }
 
-    .illustration-description {
+    .column-left {
+        padding-top:3rem;
         width:100%;
         position:static;
-        align-self: flex-start;
-        top:0;
     }
     
-    .post-title {
-        text-align: center;
-    }
     
-    .illustration-images {
+    .column-right {
         width:100%;
         min-width: 0;
         position:static;
-        align-self: flex-start;
-        top:0;
+    }
+
+
+    .painting {
+    /* max-width: 300px; */
     }
 
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1000px) {
     
     #header {
         height: 40px;

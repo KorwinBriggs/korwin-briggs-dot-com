@@ -15,11 +15,11 @@ const Book = (props) => {
     }
 
     return (
-        <article className='book' style={colors}>
+        <article className='two-column-holder' style={colors}>
 
-            <section className='book-description'>
-                <h2>{data.title}</h2>
-                <h3>{data.subtitle}</h3>
+            <section className='column-left' id='books-description'>
+                <h2 className='post-title'>{data.title}</h2>
+                <h3 className='post-title'>{data.subtitle}</h3>
                 <section className='publisher-blurb'>
                     <h4>Publisher's Description</h4>
                     <Markdown>{data.publisherdescription}</Markdown>
@@ -30,7 +30,7 @@ const Book = (props) => {
                 </section>
             </section>
 
-            <figure className='book-images'>
+            <figure className='column-right' id='books-images'>
               
                <Image 
                 className='book-cover'

@@ -5,7 +5,6 @@ import Masonry from 'react-masonry-css';
 const Gallery = (props) => {
 
     const {backurl, paintings} = props;
-    let paintingOrder = [];
 
     //reorder from order of creation to order of numbers in 'order' attribute
     paintings.sort((a, b) => a.attributes.order - b.attributes.order) 
@@ -17,7 +16,7 @@ const Gallery = (props) => {
                     default: 4,
                     1200: 3,
                     800: 2,
-                    500: 1,
+                    // 500: 1,
                 }}
                 className='painting-gallery'
                 columnClassName='painting-gallery-column'

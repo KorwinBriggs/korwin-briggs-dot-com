@@ -15,14 +15,14 @@ const Navbar = () => {
                 </ul>
             </nav>
 
-            <div id="navbarMailingList">
+            {/* <div id="navbarMailingList">
                 <h4>Mailing List</h4>
                 <p>(I mostly send silly poems)</p>
             </div>
 
             <div id="navbarLatestBlog">
                 <h4>Latest doodle, poem, and/or blogpost</h4>
-            </div>
+            </div> */}
             
         </header>
     )
