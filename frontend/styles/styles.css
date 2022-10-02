@@ -153,6 +153,42 @@ img {
 }
 
 
+
+/* PAGE/ARTICLE LAYOUTS */
+
+
+.post-title {
+    text-align: center;
+}
+
+.two-column-holder {
+    display: flex;
+    justify-content: space-evenly;
+    overflow: visible;
+}
+
+.column-left {
+    width:25%;
+    position:sticky;
+    align-self: flex-start;
+    top:0;
+    padding-bottom:1.5rem;
+}
+
+.column-right {
+    width:65%;
+    min-width: 400px;
+    position:sticky;
+    align-self: flex-start;
+    top:0;
+}
+
+.image-standard {
+    box-shadow:0 2px 9px -3px var(--shadow);
+    margin-bottom:1.5rem;
+}
+
+
 /*---------------------------------*/
 /* INDIVIDUAL PAGES AND COMPONENTS */
 /*---------------------------------*/
@@ -203,49 +239,19 @@ img {
 }
 
 
+/* ABOUT */
 
-/* INDIVIDUAL GALLERY OR BLOG PAGE */
-
-
-.post-title {
-    text-align: center;
+#about-picture {
+    width:50%;
+    height:auto;
+    margin: auto;
 }
 
-.two-column-holder {
-    display: flex;
-    justify-content: space-evenly;
-    overflow: visible;
+#about-text {
+    width:70%;
+    margin: auto;
+    padding:1.5rem 0;
 }
-
-.column-left {
-    width:25%;
-    position:sticky;
-    align-self: flex-start;
-    top:0;
-    padding-bottom:1.5rem;
-}
-
-.column-right {
-    width:65%;
-    min-width: 400px;
-    position:sticky;
-    align-self: flex-start;
-    top:0;
-}
-
-.image-standard {
-    box-shadow:0 2px 9px -3px var(--shadow);
-    margin-bottom:1.5rem;
-}
-
-
-
-/* BOOKS PAGE */
-
-
-/* BOOK (individual) */
-
-
 
 
 

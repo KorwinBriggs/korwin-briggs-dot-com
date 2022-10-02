@@ -21,22 +21,24 @@ export default function About(props) {
         <title>Korwin Briggs (.com) - Korwin Who?</title>
       </Head>
       <Layout>
-        <article className='two-column-holder'>
+        <article>
 
-            <section className='column-left'>
-                <h1>{data.title}</h1>
-                <Markdown>{data.copy}</Markdown>
-            </section>
 
-            <figure className='column-right'>
+            <h1>{data.title}</h1>
+
+            <figure id='about-picture' className='image-standard'>
                 <Image 
-                    className='image-standard'
+                    
                     src={backurl + picture.url}
                     sizes="100vw"
                     width={picture.width}
                     height={picture.height}
                 />
             </figure>
+
+            <section id='about-text'>
+                <Markdown>{data.copy}</Markdown>
+            </section>
 
         </article>
       </Layout>
