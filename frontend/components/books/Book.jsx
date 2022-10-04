@@ -13,6 +13,9 @@ const Book = (props) => {
         backgroundColor: data.bgcolor,
         color: data.txtcolor,
     }
+    const divider = {
+        borderTop: '1px solid ' + data.txtcolor,
+    }
 
     return (
         <article className='two-column-holder' style={colors}>
@@ -20,12 +23,14 @@ const Book = (props) => {
             <section className='column-left' id='books-description'>
                 <h2 className='post-title'>{data.title}</h2>
                 <h3 className='post-title'>{data.subtitle}</h3>
+                <hr style={divider}/>
                 <section className='publisher-blurb'>
-                    <h4>Publisher's Description</h4>
+                    <h4>{data.publisher} says:</h4>
                     <Markdown>{data.publisherdescription}</Markdown>
                 </section>
+                <hr style={divider}/>
                 <section className='korwin-blurb'>
-                    <h4>My Notes</h4>
+                    <h4><em>Korwin says:</em></h4>
                     <Markdown>{data.mydescription}</Markdown>
                 </section>
             </section>
@@ -35,7 +40,8 @@ const Book = (props) => {
                <Image 
                 className='book-cover'
                 src={backurl + cover.url}
-                sizes="100vw"
+                sizes=" (max-width: 768px) 100vw,
+                        66vw"
                 width={cover.width}
                 height={cover.height}
               />
@@ -48,6 +54,8 @@ const Book = (props) => {
                   <Image 
                     className='book-image'
                     src={backurl + image.attributes.url}
+                    sizes=" (max-width: 768px) 100vw,
+                            66vw"
                     width={image.attributes.width}
                     height={image.attributes.height}
                   />

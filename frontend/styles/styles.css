@@ -7,12 +7,21 @@
     font-family: 'Signika';
     src:    url('../public/fonts/Signika-VariableFont_wght.woff2') format('woff2'),
             url('../public/fonts/Signika-VariableFont_wght.woff') format('woff');
+    /* font-weight: 300 700; */
 }
 
 @font-face {
     font-family: 'Fraunces';
     src:    url('../public/fonts/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.woff2') format('woff2'),
             url('../public/fonts/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.woff') format('woff');
+    /* wght opsz WONK SOFT */
+}
+
+@font-face {
+    font-family: 'Fraunces-Italic';
+    src:    url('../public/fonts/Fraunces-Italic-VariableFont_SOFT\,WONK\,opsz\,wght.woff2') format('woff2');
+    src:    url('../public/fonts/Fraunces-Italic-VariableFont_SOFT\,WONK\,opsz\,wght.woff') format('woff');
+    /* font-weight: 100 900; */
 }
 
 :root{
@@ -23,7 +32,7 @@
     --black: #1e1923;
     --gray: #68616f;
 
-    --shadow: #b5a5bd;
+    --shadow: rgb(21, 11, 28, 0.3);
 
     --purple: #834b9b;
     --lightpurple: #bf70cb;
@@ -36,17 +45,34 @@
 /* SHARED */
 
 body {
-    font-family: 'Signika', 'Gill Sans', sans-serif;
+    font-family: 'Fraunces', sans-serif;
+
     font-weight: 300;
     line-height: 1.5;
     color: var(--black);
+    font-variation-settings: 'wght' 300, 'opsz' 9, 'SOFT' 100, 'WONK' 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Fraunces';
+    font-variation-settings: 'wght' 700, 'opsz' 50, 'SOFT' 100, 'WONK' 1;
     text-align: center;
-    margin:auto 0;
+    margin:1rem auto;
 }
+
+h1, h2 {
+    font-variation-settings: 'wght' 700, 'opsz' 100, 'SOFT' 80, 'WONK' 1;
+}
+
+em {
+    font-style: normal;
+    font-variation-settings: 'wght' 600;
+}
+
+/* p em {
+    font-variation-settings: 'wght' 100, 'opsz' 100, 'SOFT' 80, 'WONK' 1;
+    font-weight: 100;
+} */
 
 p {
     font-size: 1rem;
@@ -82,6 +108,7 @@ hr {
     border:none;
     border-top: 1px solid var(--shadow);
     clear:both;
+    margin:2rem auto;
 }
 
 div, article, section, figure {
@@ -136,6 +163,18 @@ img {
     color: var(--gray);
 }
 
+#navbar a.icon {
+    background: var(--black);
+    display: block;
+    position: absolute;
+    right:0;
+    top:0;
+}
+
+#mobile-menu-button {
+    display: none;
+}
+
 #header:hover {
     /* background-color: var(--offwhiteblue); */
 }
@@ -172,6 +211,7 @@ img {
     overflow: visible;
     margin:0;
     padding:0;
+    box-shadow:0 0 12px 0px var(--shadow);
 }
 
 .column-left {
@@ -185,13 +225,13 @@ img {
 .column-right {
     width:66%;
     min-width: 400px;
-    position:sticky;
+    /* position:sticky; */
     align-self: flex-start;
     top:0;
     padding:3rem 3rem 3rem 0;
 }
 
-.image-standard {
+.image-standard, .book-cover, .book-image {
     box-shadow:0 2px 9px -3px var(--shadow);
     margin-bottom:1.5rem;
 }
@@ -262,6 +302,17 @@ img {
 }
 
 
+/* BOOKS */
+
+.book-cover, .book-image {
+    /* margin:2rem 0; */
+}
+
+.main-content > div {
+    /* mix-blend-mode: */
+}
+
+
 
 /* MEDIA QUERIES */
 
@@ -269,12 +320,11 @@ img {
 @media screen and (max-width: 1000px) {
     
     #header {
-        height: 3rem;
         width: 100%;
         position: fixed;
         top:0;
         padding:0;
-    
+        height:3rem;
         /* border-bottom: 1px dotted var(--shadow); */
         border-right: none;
         box-shadow:0 0 12px -3px var(--shadow);
@@ -300,14 +350,12 @@ img {
     }
 
     .navbutton {
-        float:right;
+        float:left;
         padding-left:.5rem;
     }
 
     #main-content {
-        padding-top:3.5rem;
-        padding-left:10px;
-        padding-right:10px;
+        padding:2rem 0;
     }
 
 }
@@ -349,4 +397,52 @@ img {
         /* width: 140%; */
     }
 
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    #header {
+        height: auto;
+        /* transition: 0.2s; */
+    }
+
+    #navbar {
+        overflow: hidden;
+    }
+
+    #mobile-menu-button {
+        display: block;
+        height: 40px;
+        width:50px;
+        float:right;
+        border: none;
+        background: none;
+        padding:.5rem;
+        padding-top:10px;
+    }
+
+    .navbutton {
+        float:none;
+        margin:auto;
+    }
+
+    #navbuttons {
+        float:none;
+        clear:both;
+        margin:auto;
+        transition: 0.1s;
+    }
+
+    .menu-closed {
+        /* display:none; */
+        height:0 !important;
+        padding:0 !important;
+        margin:0 !important;
+    }
+
+    .menu-closed > * {
+        /* display:none; */
+    }
 }

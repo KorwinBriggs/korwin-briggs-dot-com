@@ -11,7 +11,6 @@ const Painting = (props) => {
     return (
         <figure>
             <Link href={'/illustrations/' + data.slug}>
-                <a>
                     <Image className="painting"
                         src={backurl + thumbnail.url} 
                         sizes=" (max-width: 500px) 100vw,
@@ -22,7 +21,6 @@ const Painting = (props) => {
                         width={thumbnail.width}
                         height={thumbnail.height}
                     />
-                </a>
             </Link>
         </figure>
     );

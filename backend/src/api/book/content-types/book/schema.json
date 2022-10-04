@@ -73,6 +73,12 @@
     },
     "publisherdescription": {
       "type": "richtext"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
     }
   }
 }
