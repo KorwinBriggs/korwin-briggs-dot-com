@@ -245,14 +245,20 @@ img {
 /* INTRODUCTION */
 /* ie the big text at the top of some pages */
 
-.introduction {
-
+.intro-portrait {
+    width:40%;
+    max-width:500px;
+    padding-top:3rem;
+    margin:auto;
 }
 
 .intro-text {
     font-size: 1.25rem;
     line-height:1.75;
     letter-spacing: .05rem;
+    text-align: center;
+    width:50%;
+    margin:2rem auto;
 }
 
 
@@ -264,7 +270,7 @@ img {
     display: flex;
     width: auto;
     max-width: 1400px;
-    margin:auto;
+    margin:2rem;
     /* clear: both; */
 }
 
@@ -317,7 +323,7 @@ img {
 /* MEDIA QUERIES */
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 10000px) {
     
     #header {
         width: 100%;
@@ -351,7 +357,7 @@ img {
 
     .navbutton {
         float:left;
-        padding-left:.5rem;
+        padding-left:1rem;
     }
 
     #main-content {

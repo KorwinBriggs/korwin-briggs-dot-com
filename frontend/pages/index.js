@@ -1,13 +1,16 @@
 
 import Head from 'next/head'
-// import Image from 'next/image'
+import Image from 'next//future/Image'
 import Layout from '../components/shared/Layout';
 import ArtGallery from '../components/portfolio/ArtGallery';
+import Markdown from 'markdown-to-jsx';
 import {fetchFromCMS, backurl} from '../lib/service';
 
 // import styles from '../styles/styles.css'
 
 export default function Home(props) {
+
+  const portrait = props.home.data.attributes.picture.data;
 
   return (
     <div>
@@ -16,18 +19,18 @@ export default function Home(props) {
       </Head>
       <Layout>
         <section className='introduction'>
-          <p className='intro-text'>
-            
-          {/* Korwin Briggs has written and illustrated books, comics, and infographics 
-          about science, history, mythology, and other academic-sounding things. 
-          This is his fancy portfolio site and (eventually, maybe) blog - 
-          see more of his work at <a href="https://www.veritablehokum.com">VeritableHokum.com</a>, 
-          or join his mailing list, which he promises is like 95% doodles and silly rhyming poems. */}
 
-          Korwin Briggs has written and illustrated books, comics, and infographics 
-          about science, history, mythology, and other academic-sounding things. 
-          This is his fancy portfolio site - 
-          see more of his work at <a href="https://www.veritablehokum.com">VeritableHokum.com</a>.
+          <Image 
+              className='intro-portrait'
+              src={backurl + portrait.attributes.url}
+              sizes=" (max-width: 768px) 100vw,
+                      66vw"
+              width={portrait.attributes.width}
+              height={portrait.attributes.height}
+          />
+
+          <p className='intro-text'>
+            <Markdown>{props.home.data.attributes.introtext}</Markdown>
           </p>
         </section>
         <hr />
@@ -41,8 +44,9 @@ export default function Home(props) {
 //fetchFromCMS is in lib/service.js, uses axios to load api stuff
 export async function getStaticProps() {
   const illustrations = await fetchFromCMS('api/illustrations?populate=*');
+  const home = await fetchFromCMS('api/home?populate=*');
   return {
-    props: {illustrations},
+    props: {illustrations, home},
     revalidate: 1,
   };
 }
