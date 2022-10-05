@@ -25,7 +25,7 @@ const Navbar = () => {
     }
 
     return (
-        <header id="header" class="navOpen">
+        <header id="header" className="navOpen">
             <nav id="navbar">
                 <h2 id="navlogo">Korwin Briggs (.com)</h2>
 

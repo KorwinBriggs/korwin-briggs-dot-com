@@ -31,6 +31,7 @@ export default function Pictures(props) {
             <figure className='column-right'>
               
                <Image 
+                key={mainImage.id}
                 className='image-standard'
                 src={backurl + mainImage.url}
                 sizes="100vw"
@@ -44,6 +45,7 @@ export default function Pictures(props) {
               {additionalImages != null && <div className='illustration-additional-images'>
                 {additionalImages.map( (image) => (
                   <Image 
+                    key={image.id}
                     className='image-standard'
                     src={backurl + image.attributes.url}
                     width={image.attributes.width}
@@ -58,7 +60,7 @@ export default function Pictures(props) {
 
         <hr />
 
-        <h2>But Wait, There's More!</h2>
+        <h2>{"But Wait, There's More!"}</h2>
 
         <ArtGallery backurl={backurl} paintings={props.illustrations.data} />
 

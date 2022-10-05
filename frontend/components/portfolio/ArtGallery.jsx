@@ -23,7 +23,7 @@ const Gallery = (props) => {
             >
 
                 {paintings.map( painting => (
-                    <Painting backurl={backurl} data={painting.attributes}/>
+                    <Painting key={painting.id} backurl={backurl} data={painting.attributes}/>
                 ))}
             
             </Masonry>

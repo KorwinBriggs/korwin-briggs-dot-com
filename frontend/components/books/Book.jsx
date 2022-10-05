@@ -38,6 +38,7 @@ const Book = (props) => {
             <figure className='column-right' id='books-images'>
               
                <Image 
+                key={cover.id}
                 className='book-cover'
                 src={backurl + cover.url}
                 sizes=" (max-width: 768px) 100vw,
@@ -52,6 +53,7 @@ const Book = (props) => {
               {interiors != null && <div className='book-interiors'>
                 {interiors.map( (image) => (
                   <Image 
+                    key={image.id}
                     className='book-image'
                     src={backurl + image.attributes.url}
                     sizes=" (max-width: 768px) 100vw,

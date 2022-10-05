@@ -28,7 +28,7 @@ export default function Books(props) {
           {books != null && <div>
 
             {books.map( book => (
-              <Book backurl={backurl} data={book.attributes} />
+              <Book key={book.id} backurl={backurl} data={book.attributes} />
             ))}
 
           </div>}
